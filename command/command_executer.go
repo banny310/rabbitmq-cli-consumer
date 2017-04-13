@@ -22,7 +22,8 @@ func (me CommandExecuter) Execute(cmd *exec.Cmd) int {
 	me.infLogger.Println("Processing message...")
 	out, err := cmd.CombinedOutput()
 
-	me.infLogger.Printf("Output: %s\n", string(out[:]))
+	me.infLogger.Println("Output...")
+	me.infLogger.Printf("%s\n", string(out[:]))
 	
 	if err != nil {
 		me.infLogger.Println("Failed. Check error log for details.")
